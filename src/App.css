@@ -1,0 +1,36 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+#root {
+  
+  margin: 0 auto;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Hace que el contenedor tenga al menos la altura de la ventana */
+}
+header {
+  background-color: #f8f9fa;
+  padding: 10px;
+  text-align: center;
+}
+main {
+  flex: 1; /* Este es el truco para que el main ocupe todo el espacio disponible */
+  padding: 10px;
+  background-color: #e9ecef;
+}
+footer {
+  background-color: #f8f9fa;
+  padding: 10px;
+  text-align: center;
+}

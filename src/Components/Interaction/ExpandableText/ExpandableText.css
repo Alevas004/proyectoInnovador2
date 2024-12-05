@@ -1,0 +1,29 @@
+.expandable-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px;
+}
+.expandable-text p {
+  max-width: 100%;
+  white-space: pre-wrap; /* Permite que el texto se ajuste dentro del contenedor */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Muestra puntos suspensivos si el texto es demasiado largo */
+  display: inline-block;
+}
+
+.expandable-text.expanded p {
+  white-space: normal; /* Permite que el texto se expanda */
+}
+
+.expandable-text button {
+  background-color: var(#2980b9); /* Color del botón */
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+}
+
+.expandable-text button:hover {
+  color: white;
+}

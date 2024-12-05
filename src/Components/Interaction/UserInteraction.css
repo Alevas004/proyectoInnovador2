@@ -1,0 +1,123 @@
+
+.userInteraction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #f9f9f9; 
+  border-radius: 8px;
+}
+
+
+.userInteraction__reactions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.userInteraction__reactions h4 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.userInteraction__reactionSelector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.userInteraction__reactionSelector select,
+.userInteraction__reactionSelector button {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+}
+
+
+
+/* Contador de reacciones */
+.userInteraction__reactionCounts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.reactionItem {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #eaeaea;
+  font-size: 0.9em;
+}
+
+/* Sección de comentarios */
+.userInteraction__comments {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.userInteraction__comments h4 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.userInteraction__commentsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.commentItem {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.commentAuthor {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.authorName {
+  font-weight: bold;
+  color: #333;
+}
+
+.authorSpeciality {
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* Formulario de comentarios */
+.userInteraction__commentForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 5px;
+}
+
+.userInteraction__commentForm input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+}
+
+
+
+

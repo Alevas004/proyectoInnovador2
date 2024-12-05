@@ -1,0 +1,70 @@
+
+.entrepreneurForm {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+ 
+  .entrepreneurForm h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  
+  .inputGroup {
+    margin-bottom: 1rem;
+  }
+  
+  
+  .inputGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  /* Estilo de los inputs y select */
+  .inputGroup input,
+  .inputGroup select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box; 
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  /* Efecto al pasar el cursor o al enfocarse */
+  .inputGroup input:focus,
+  .inputGroup select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+ 
+
+  
+  /* Ajuste de estilo en dispositivos móviles */
+  @media (max-width: 768px) {
+    .entrepreneurForm {
+      padding: 1rem;
+    }
+  
+    .inputGroup input,
+    .inputGroup select {
+      font-size: 0.9rem;
+    }
+  
+    .entrepreneurForm button {
+      padding: 0.5rem;
+    }
+  }
+  

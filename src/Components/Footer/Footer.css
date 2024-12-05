@@ -1,0 +1,36 @@
+.footer_main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.footer_top {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.logo__footer img{
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 150px;
+}
+
+.lista__footer ul li{
+    list-style: none;
+    text-align: start;
+}
+
+.lista__footer ul li:hover{
+    color: var();
+}
+
+.lista__footer ul li .link {
+    text-decoration: none;
+}
+
+.emails {
+    color: #3a506b6c
+}

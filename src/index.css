@@ -1,0 +1,43 @@
+#root {
+  --primary-color: #0b132b; /* Azul primario */
+  --secondary-color: #6fffe9; /* Verde secundario */
+  --accent-color: #5bc0be; 
+  --background-color: #3a506b; /* Color de fondo */
+  --text-color: #1c2541; /* Color de texto */
+}
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "Lustria";
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  color: var(--primary-color);
+  font-family: "Poppins";
+  font-size: 2rem;
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: var(--primary-color) ; /* Texto blanco */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+button:hover {
+  background-color: var( --background-color); /* Color del botón al pasar el cursor */
+  color: white;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 700;
+}
