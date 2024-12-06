@@ -15,6 +15,7 @@ const PostEntrepreneur = () => {
     typeSector: "",
     userId: userId || "",
     content: "",
+    image: "",
   });
 
   const [specialty, setSpecialty] = useState([]);
@@ -38,15 +39,29 @@ const PostEntrepreneur = () => {
     loadSpecialty();
   }, []);
 
+  const isValidUrl = (url) => {
+    try {
+      new URL(url);
+      return true;
+    } catch (_) {
+      return false;
+    }
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [name]: name === "receivedInvestment" ? parseFloat(value) : value,
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e) => {
+
+    if (!isValidUrl(formData.image)) {
+      alert("Por favor ingresa una URL válida para la imagen.");
+      return;
+    }
     e.preventDefault();
 
     const url = "http://localhost:8080/entrepreneurShip";
@@ -58,6 +73,7 @@ const PostEntrepreneur = () => {
       userId: formData.userId,
       content: formData.content, // Se puede ajustar si el backend requiere un valor distinto
       reactionType: null, // Se puede ajustar si el backend requiere un valor distinto
+      image: formData.image,
     };
 
     try {
@@ -75,6 +91,8 @@ const PostEntrepreneur = () => {
           receivedInvestment: "",
           typeSector: "",
           userId: userId || "",
+          content:"",
+          image: ""
         });
         navigate("/");
       }
@@ -104,9 +122,9 @@ const PostEntrepreneur = () => {
       </div>
 
       <div className="inputGroup">
-        <label htmlFor="receivedInvestment">Inversión Recibida (USD)</label>
+        <label htmlFor="receivedInvestment">Titulo de la publicacion</label>
         <input
-          type="number"
+          type="string"
           id="receivedInvestment"
           name="receivedInvestment"
           value={formData.receivedInvestment}
@@ -133,10 +151,27 @@ const PostEntrepreneur = () => {
         </select>
       </div>
 
-      <div className="">
+      <div className="inputGroup">
+        <label htmlFor="image">Imagen de la publicacion (URL)</label>
+        <input
+          type="url"
+          id="image"
+          name="image"
+          value={formData.image}
+          onChange={handleInputChange}
+          required
+        />
+      </div>
+
+      
+      
+      
+      
+
+      <div className="inputGroup">
         <textarea
           className="xp"
-          name="content" // *** Agregado name para manejar el cambio ***
+          name="content"
           id="content"
           rows="4"
           cols="50"
@@ -145,12 +180,12 @@ const PostEntrepreneur = () => {
           onChange={handleInputChange}
           required
         ></textarea>
-        <label className="inputGroupLabel" htmlFor="content">
-          Experiencia previa
-        </label>
+        <label className="inputGroupLabel" htmlFor="content"></label>
       </div>
 
-      <button type="submit">Crear Publicación</button>
+      <div className="buttonContainer">
+        <button type="submit">Crear Publicación</button>
+      </div>
     </form>
   );
 };

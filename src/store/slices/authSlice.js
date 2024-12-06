@@ -72,32 +72,41 @@ const authSlice = createSlice({
 export const { updateUserData, reset, startSession, updateToken } =
   authSlice.actions;
 
-export const startSessionThunk =
+  export const startSessionThunk =
   ({ email, password }) =>
   async (dispatch) => {
     try {
       const sessionData = await login({ email, password });
       console.log("Datos de la sesión:", sessionData);
 
+      // Determinar si es Explorer o Entrepreneur
+      const userKey = sessionData.Explorer ? "Explorer" : "Entrepreneur";
+      const userData = sessionData[userKey];
+
+      if (!userData) {
+        throw new Error("No se encontraron datos de usuario en la respuesta.");
+      }
+
       // Extraer la información del usuario desde la respuesta
-      const userData = {
-        id: sessionData.user.id,
-        fullName: sessionData.user.fullName,
-        email: sessionData.user.email,
-        username: sessionData.user.username,
-        experience: sessionData.user.experience || "", // Maneja caso de experiencia nula o indefinida
-        contact: sessionData.user.contact,
-        speciality: sessionData.user.specialty || "", // Maneja caso de especialidad nula o indefinida
-        city: sessionData.user.city || "", // Maneja caso de ciudad nula o indefinida
-        roles: sessionData.user.roles || "", // Agregado para la propiedad 'roles'
+      const parsedUserData = {
+        id: userData.id,
+        fullName: userData.fullName,
+        email: userData.email,
+        username: userData.username,
+        experience: userData.experience || "", // Maneja caso de experiencia nula o indefinida
+        contact: userData.contact,
+        speciality: userData.specialty || "", // Maneja caso de especialidad nula o indefinida
+        city: userData.city || "", // Maneja caso de ciudad nula o indefinida
+        roles: userData.roles || "", // Agregado para la propiedad 'roles'
       };
 
-      dispatch(updateUserData(userData));
+      dispatch(updateUserData(parsedUserData));
       dispatch(updateToken(sessionData.token));
       dispatch(startSession());
     } catch (error) {
       console.error("Error en la autenticación:", error);
     }
   };
+
 
 export default authSlice.reducer;

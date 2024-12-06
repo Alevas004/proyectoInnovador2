@@ -13,10 +13,12 @@
 
 /* Encabezado de la tarjeta */
 .enterprisesCard__header {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  flex-wrap: nowrap;
   width: 100%;
-  margin-bottom: 15px;
   border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
 }
 
 .enterprisesCard__title {
@@ -28,8 +30,9 @@
 
 .enterprisesCard__headerDetails {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .enterprisesCard__sector {
@@ -65,6 +68,11 @@
 }
 
 .enterprisesCard__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   background-color: var(--primary-color);
   border-radius: 10px;
   padding: 15px;
@@ -85,12 +93,30 @@
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
+.enterprisesCard__titledescription {
+  text-align: center;
+  color: white;
+  font-family: 700;
+}
+
+.enterpriseCard__img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.enterpriseCard__img img {
+  max-width: 600px;
+  width: 100%;
+}
 
 /* Estilo de los elementos y mejoras de diseño */
 @media (max-width: 768px) {
   .enterprisesCard__headerDetails {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-around;
   }
 
   .enterprisesCard__interaction {

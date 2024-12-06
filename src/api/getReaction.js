@@ -1,10 +1,10 @@
-export const getReactionUser = async () => {
+export const getReactionUser = () => {
   return [
-    { id: 1, name: "LIKE" },
-    { id: 2, name: "LOVE" },
-    { id: 3, name: "EXCITE" },
-    { id: 4, name: "AMAZE" },
-    { id: 5, name: "SADDEN" },
-    { id: 6, name: "ANGER" },
+    { id: 1, name: "👍" },
+    { id: 2, name: "😍" },
+    { id: 3, name: "😄" },
+    { id: 4, name: "🫢" },
+    { id: 5, name: "😢" },
+    { id: 6, name: "😤" },
   ];
 };

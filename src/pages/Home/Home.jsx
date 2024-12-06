@@ -76,7 +76,6 @@ const Home = () => {
             <span className="close" onClick={closeModal}>
               &times;
             </span>
-            <h2>Nueva Publicación</h2>
             <PostEntrepreneur />
           </div>
         </div>
